@@ -979,10 +979,7 @@ module.exports = {
 
 var ClientBase = __webpack_require__(/*! ./client_base */ "./src/javascript/_common/base/client_base.js");
 var GTM = __webpack_require__(/*! ./gtm */ "./src/javascript/_common/base/gtm.js");
-
-var _require = __webpack_require__(/*! ./livechat */ "./src/javascript/_common/base/livechat.js"),
-    livechatFallback = _require.livechatFallback;
-
+// const { livechatFallback } = require('./livechat');
 var BinarySocket = __webpack_require__(/*! ./socket_base */ "./src/javascript/_common/base/socket_base.js");
 var getLanguage = __webpack_require__(/*! ../language */ "./src/javascript/_common/language.js").get;
 var localize = __webpack_require__(/*! ../localize */ "./src/javascript/_common/localize.js").localize;
@@ -995,33 +992,31 @@ var Elevio = function () {
     var account_id = '5bbc2de0b7365';
     var elevio_script = 'https://cdn.elev.io/sdk/bootloader/v4/elevio-bootloader.js?cid=' + account_id;
 
-    var checkElevioAvailability = function checkElevioAvailability() {
-        var httpGet = function httpGet(theUrl) {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open('GET', theUrl, false);
-            xmlHttp.send(null);
-            return xmlHttp.status;
-        };
+    // const checkElevioAvailability = () => {
+    //     const httpGet = (theUrl) => {
+    //         const xmlHttp = new XMLHttpRequest();
+    //         xmlHttp.open('GET', theUrl, false);
+    //         xmlHttp.send(null);
+    //         return xmlHttp.status;
+    //     };
 
-        var httpresponse = httpGet(elevio_script);
-        if (httpresponse !== 200) {
+    //     const httpresponse = httpGet(elevio_script);
+    //     if (httpresponse !== 200) {
 
-            // fallback to livechat when elevio is not available
-            // el_shell = document.getElementById(el_shell_id).remove();
-            livechatFallback();
-        }
-    };
+    //         // fallback to livechat when elevio is not available
+    //         el_shell = document.getElementById(el_shell_id).remove();
+    //         livechatFallback();
+    //     }
+    // };
 
     var init = function init() {
         // if (isLoginPages()) return;
 
         // el_shell = document.getElementById(el_shell_id);
 
-        el_shell.addEventListener('click', function () {
-            return injectElevio(true);
-        });
+        // el_shell.addEventListener('click', () => injectElevio(true));
 
-        checkElevioAvailability(elevio_script);
+        // checkElevioAvailability(elevio_script);
     };
 
     var injectElevio = function injectElevio() {
@@ -28889,7 +28884,7 @@ var binary_desktop_app_id = 14473;
 
 var getAppId = function getAppId() {
     var app_id = null;
-    var user_app_id = ''; // you can insert Application ID of your registered application here
+    var user_app_id = '25732'; // you can insert Application ID of your registered application here
     var config_app_id = window.localStorage.getItem('config.app_id');
     var is_new_app = /\/app\//.test(window.location.pathname);
     if (config_app_id) {

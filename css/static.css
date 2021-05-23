@@ -963,7 +963,9 @@ div.kineticjs-content {
   .home-content .center-text-m {
     text-align: center; }
   .home-content .gr-centered-m {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .home-content .margin-top-10 {
+    margin-top: 10px; } }
 
 @media screen and (max-width: 480px) {
   .home-content .small-image {
@@ -1154,30 +1156,28 @@ div.kineticjs-content {
     margin: 35px 0 0; }
   #payment_methods table thead {
     border-bottom: 1px solid #44484c; }
-  #payment_methods table tr {
-    position: relative; }
-    #payment_methods table tr .data-anchor-link {
-      display: none; }
-    #payment_methods table tr .th-list, #payment_methods table tr .td-list {
-      display: grid;
-      grid-template-columns: 2fr 1.3fr 1.3fr 3fr 1fr;
-      grid-column-gap: 10px; }
-      #payment_methods table tr .th-list .th, #payment_methods table tr .th-list .td, #payment_methods table tr .td-list .th, #payment_methods table tr .td-list .td {
-        -ms-flex-item-align: center;
-            align-self: center; }
-      #payment_methods table tr .th-list > *:nth-child(1), #payment_methods table tr .td-list > *:nth-child(1) {
-        min-width: 180px; }
-      #payment_methods table tr .th-list > *:nth-child(2), #payment_methods table tr .th-list > *:nth-child(3), #payment_methods table tr .td-list > *:nth-child(2), #payment_methods table tr .td-list > *:nth-child(3) {
-        min-width: 110px; }
-      #payment_methods table tr .th-list > *:nth-child(4), #payment_methods table tr .td-list > *:nth-child(4) {
-        min-width: 190px; }
-    #payment_methods table tr .td-description {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
+  #payment_methods table tr .data-anchor-link {
+    display: none; }
+  #payment_methods table tr .th-list, #payment_methods table tr .td-list {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 1.3fr 3fr 1fr;
+    grid-column-gap: 10px; }
+    #payment_methods table tr .th-list .th, #payment_methods table tr .th-list .td, #payment_methods table tr .td-list .th, #payment_methods table tr .td-list .td {
+      -ms-flex-item-align: center;
+          align-self: center; }
+    #payment_methods table tr .th-list > *:nth-child(1), #payment_methods table tr .td-list > *:nth-child(1) {
+      min-width: 180px; }
+    #payment_methods table tr .th-list > *:nth-child(2), #payment_methods table tr .th-list > *:nth-child(3), #payment_methods table tr .td-list > *:nth-child(2), #payment_methods table tr .td-list > *:nth-child(3) {
+      min-width: 110px; }
+    #payment_methods table tr .th-list > *:nth-child(4), #payment_methods table tr .td-list > *:nth-child(4) {
+      min-width: 190px; }
+  #payment_methods table tr .td-description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   #payment_methods table thead tr th {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1741,8 +1741,9 @@ body #not_authenticated_financial ul.checked > li {
 .authentication #onfido .onfido-sdk-ui-NavigationBar-back {
   background: transparent; }
 
-.authentication #onfido .onfido-sdk-ui-Button-button-primary:hover {
-  background: #353ff4; }
+.authentication #onfido .onfido-sdk-ui-crossDevice-CrossDeviceLink-numberInputSection .ods-button.-action--primary {
+  height: 100%;
+  font-size: 0.875em; }
 
 .authentication #onfido .onfido-sdk-ui-Button-button-outline:hover {
   background-color: transparent; }
@@ -1752,11 +1753,22 @@ body #not_authenticated_financial ul.checked > li {
   color: #000000;
   border-radius: 0; }
 
+.authentication #onfido .onfido-sdk-ui-Theme-textButton:hover {
+  color: #000000; }
+
+.authentication #onfido .onfido-sdk-ui-CustomFileInput-container .onfido-sdk-ui-Theme-button-lg {
+  background: #3640f5; }
+
+.authentication #onfido .onfido-sdk-ui-CustomFileInput-container button {
+  background: transparent; }
+  .authentication #onfido .onfido-sdk-ui-CustomFileInput-container button:hover {
+    background: #5c6cff; }
+
 .authentication #onfido input:hover, .authentication #onfido input:focus, .authentication #onfido textarea:hover, .authentication #onfido textarea:focus {
   outline: 0;
   border: none; }
 
-.authentication #onfido button:not(.onfido-sdk-ui-Theme-link):not(.onfido-sdk-ui-Button-button-primary):hover, .authentication #onfido button:not(.onfido-sdk-ui-Theme-link):not(.onfido-sdk-ui-Button-button-primary):focus {
+.authentication #onfido button:not(.onfido-sdk-ui-Theme-link):not(.ods-button):hover, .authentication #onfido button:not(.onfido-sdk-ui-Theme-link):not(.ods-button):focus {
   background-color: inherit; }
 
 .authentication .fields > .gr-row > div > .button {
@@ -1799,6 +1811,10 @@ body #not_authenticated_financial ul.checked > li {
 
 .authentication .center-text .button .barspinner {
   margin: 0 auto; }
+
+@media screen and (max-width: 500px) {
+  .authentication .submit-status table {
+    font-size: 0.7rem; } }
 
 .authentication .submit-status table th:not(:last-child) {
   width: 25%; }
@@ -2381,6 +2397,27 @@ body #not_authenticated_financial ul.checked > li {
 
 #self_exclusion_dialog #dialog_content {
   max-width: 496px; }
+
+.affiliate-ib-calculation {
+  border: 1px solid #000000;
+  padding: 10px; }
+  .affiliate-ib-calculation-minimum {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+
+.signal_provider-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media screen and (max-width: 480px) {
+    .signal_provider-container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+          -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse; } }
+
+.signal_provider-image {
+  border: 2px solid #dedede; }
 
 .timeline {
   margin: 0 auto;
